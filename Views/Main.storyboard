@@ -53,25 +53,25 @@
                                                     </constraints>
                                                 </stackView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8M-Ud-L1K">
-                                                    <rect key="frame" x="8" y="9.5" width="50" height="48.5"/>
-                                                    <color key="tintColor" name="yellow"/>
+                                                    <rect key="frame" x="8" y="10" width="50" height="47.5"/>
+                                                    <color key="tintColor" name="white"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="s6q-UO-MHn"/>
                                                         <constraint firstAttribute="height" constant="50" id="sbR-Tp-qV8"/>
                                                     </constraints>
-                                                    <imageReference key="image" image="diamond" catalog="system" symbolScale="small"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="13" weight="light"/>
+                                                    <imageReference key="image" image="diamond" catalog="system" symbolScale="small" renderingMode="template"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="10" weight="ultraLight"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEL-ZN-JSz">
+                                                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEL-ZN-JSz">
                                                     <rect key="frame" x="356" y="9" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="e4H-aW-rLL"/>
                                                         <constraint firstAttribute="width" constant="50" id="iMa-bS-bOM"/>
                                                     </constraints>
+                                                    <color key="tintColor" red="0.5974496695" green="0.58574032779999996" blue="0.93319660429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" image="info.circle" catalog="system"/>
                                                     <connections>
-                                                        <action selector="infoButtonPressed:" destination="eOE-X7-YRF" eventType="touchUpInside" id="eJq-E9-Px9"/>
-                                                        <segue destination="UZC-pV-RYG" kind="show" identifier="reminderInfoSegue" id="e9Z-Ty-7Vy"/>
+                                                        <action selector="infoButton:forEvent:" destination="eOE-X7-YRF" eventType="touchUpInside" id="1bL-m8-NUs"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -92,10 +92,10 @@
                                         <color key="backgroundColor" name="intermediate"/>
                                         <color key="tintColor" name="lightBlueAccent"/>
                                         <connections>
-                                            <outlet property="dateLabel" destination="7ID-DO-Pby" id="lnN-d2-IgA"/>
-                                            <outlet property="infoButton" destination="vEL-ZN-JSz" id="uew-wD-6tQ"/>
-                                            <outlet property="isCompleteIcon" destination="l8M-Ud-L1K" id="Xf9-OI-Eck"/>
-                                            <outlet property="titleLabel" destination="7eG-qx-VOW" id="txh-mn-N18"/>
+                                            <outlet property="dateLabel" destination="7ID-DO-Pby" id="YGn-yE-dmO"/>
+                                            <outlet property="infoButton" destination="vEL-ZN-JSz" id="sFX-BF-CYf"/>
+                                            <outlet property="isCompleteIcon" destination="l8M-Ud-L1K" id="vzN-B0-nqW"/>
+                                            <outlet property="titleLabel" destination="7eG-qx-VOW" id="YP6-Pe-BJH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -116,26 +116,29 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reminders" id="xCX-Fh-XRX">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="p4s-QI-EOa">
-                            <color key="tintColor" name="yellow"/>
+                            <color key="tintColor" red="0.5974496695" green="0.58574032779999996" blue="0.93319660429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="t5w-CF-avX">
-                            <color key="tintColor" name="yellow"/>
+                            <color key="tintColor" red="0.5974496695" green="0.58574032779999996" blue="0.93319660429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="UZC-pV-RYG" kind="show" identifier="newReminderSegue" id="33c-o2-lTL"/>
+                                <segue destination="UZC-pV-RYG" kind="show" identifier="createSegue" id="wgf-oa-SBk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="PwX-65-5rp" id="s6d-b2-gdh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2825" y="721"/>
+            <point key="canvasLocation" x="-3009" y="1104"/>
         </scene>
         <!--New ReminderVC-->
         <scene sceneID="MpJ-jf-2zy">
             <objects>
                 <viewController id="UZC-pV-RYG" customClass="NewReminderVC" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cjD-zm-BIr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pwp-ht-5qc">
@@ -147,10 +150,10 @@
                                         <color key="textColor" name="darkest"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Reminder Title" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fOt-JQ-oFa">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fOt-JQ-oFa">
                                         <rect key="frame" x="0.0" y="37" width="354" height="34"/>
                                         <color key="backgroundColor" name="intermediate"/>
-                                        <color key="textColor" red="0.9989635348" green="0.89717771810000002" blue="0.66691390719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" name="white"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -177,7 +180,7 @@
                                 </state>
                                 <connections>
                                     <action selector="saveBttnPressed:" destination="UZC-pV-RYG" eventType="touchUpInside" id="Krn-g4-Jyd"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="savedSegue" id="tV5-pP-fqI"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="saveSegue" id="gdS-LX-2bT"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U6Y-O6-Xj1">
@@ -185,7 +188,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="odC-VO-pkn">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="5"/>
-                                        <color key="backgroundColor" name="yellow"/>
+                                        <color key="backgroundColor" red="0.5974496695" green="0.58574032779999996" blue="0.93319660429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="usU-mi-dVa"/>
                                         </constraints>
@@ -207,7 +210,7 @@
                                                         <color key="backgroundColor" name="intermediate"/>
                                                         <color key="tintColor" name="intermediate"/>
                                                         <color key="onTintColor" name="lightBlueAccent"/>
-                                                        <color key="thumbTintColor" red="0.9989635348" green="0.79608706905639592" blue="0.60052277878104576" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="thumbTintColor" red="0.5974496695" green="0.58574032779999996" blue="0.93319660429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" name="intermediate"/>
@@ -223,7 +226,7 @@
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kJE-fG-XaH">
                                         <rect key="frame" x="0.0" y="98" width="414" height="5"/>
-                                        <color key="backgroundColor" name="yellow"/>
+                                        <color key="backgroundColor" red="0.5974496695" green="0.58574032779999996" blue="0.93319660429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="gli-I3-FrH"/>
                                         </constraints>
@@ -232,7 +235,7 @@
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K2C-Tn-UJF">
                                 <rect key="frame" x="0.0" y="196" width="414" height="5"/>
-                                <color key="backgroundColor" name="yellow"/>
+                                <color key="backgroundColor" red="0.5974496695" green="0.58574032779999996" blue="0.93319660429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="j31-k1-dGF"/>
                                 </constraints>
@@ -289,11 +292,11 @@
                         <color key="backgroundColor" name="darkest"/>
                         <color key="tintColor" name="darkest"/>
                         <color key="barTintColor" name="darkest"/>
-                        <color key="selectedImageTintColor" name="lightBlueAccent"/>
+                        <color key="selectedImageTintColor" red="0.5974496695" green="0.58574032779999996" blue="0.93319660429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dcC-Ah-He2" kind="relationship" relationship="viewControllers" id="Gq9-kq-jI9"/>
-                        <segue destination="fll-kN-x6n" kind="relationship" relationship="viewControllers" id="zy4-T8-9ov"/>
+                        <segue destination="dcC-Ah-He2" kind="relationship" relationship="viewControllers" id="TYW-yz-hhs"/>
+                        <segue destination="fll-kN-x6n" kind="relationship" relationship="viewControllers" id="ukW-P8-DKd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABW-NV-3sy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -317,7 +320,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8BH-oN-cZz"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="diU-lj-Y6G"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0c-xL-onW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -329,14 +332,14 @@
             <objects>
                 <viewController id="fll-kN-x6n" customClass="FeaturedReminderVC" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jyF-hC-2Xc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/23/20  1:30AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRp-Vt-SPl">
                                 <rect key="frame" x="126" y="328" width="162" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" name="yellow"/>
+                                <color key="textColor" name="white"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Learn iOS Development" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmz-wt-hv1">
@@ -354,12 +357,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PqX-1W-t5D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="742" y="510"/>
+            <point key="canvasLocation" x="-4307" y="541"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="e9Z-Ty-7Vy"/>
-        <segue reference="tV5-pP-fqI"/>
+        <segue reference="gdS-LX-2bT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="diamond" catalog="system" width="128" height="122"/>
@@ -375,9 +377,6 @@
         </namedColor>
         <namedColor name="white">
             <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="yellow">
-            <color red="0.99215686274509807" green="0.70588235294117652" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

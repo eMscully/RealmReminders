@@ -3,6 +3,8 @@ import UIKit
 import RealmSwift
 
 class ReminderListVC: UIViewController {
+    @IBOutlet var tableView: UITableView!
+    
     var realm = try! Realm()
     
     var reminders : Results<Reminder>?
@@ -45,5 +47,7 @@ extension ReminderListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
+    
 }
 

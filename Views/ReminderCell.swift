@@ -5,7 +5,14 @@ class ReminderCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var isCompleteIcon: UIImageView!
-    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet var infoButton: UIButton!
+    // created ^ reference outlet just in case
+    @IBAction func infoButton(_ sender: UIButton, forEvent event: UIEvent) {
+        // test whether this is a valid way to selectively initiate segue ...
+        
+        // may need to make a storyboard segue here and give it a unique identifier. i did give the icon an ID name in attributes inspector. see K struct 
+    }
+    
  
     var reminder = Reminder()
     
