@@ -1,37 +1,29 @@
+//
+//  FeaturedReminderVC.swift
+//  Reminders
+//
+//  Created by Erin Scully on 12/23/20.
+//
 
 import UIKit
-import RealmSwift
 
 class FeaturedReminderVC: UIViewController {
 
-    @IBOutlet var dateLabel: UILabel!
-    
-    @IBOutlet var titleLabel: UILabel!
-    
-    let realm = try! Realm()
-    var reminders : Results<Reminder>!
-    var favoriteReminder : Reminder!
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        reminders = realm.objects(Reminder.self)
-        
-        titleLabel.text = favoriteReminder.title
-        let dateFormatter = DateFormatter()
-        dateLabel.text = dateFormatter.string(from: favoriteReminder.date)
-    }
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
-    
+        // Do any additional setup after loading the view.
     }
     
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
