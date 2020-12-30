@@ -139,7 +139,7 @@
             <objects>
                 <viewController id="UZC-pV-RYG" customClass="NewReminderVC" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cjD-zm-BIr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pwp-ht-5qc">
@@ -211,6 +211,9 @@
                                                         <color key="tintColor" name="intermediate"/>
                                                         <color key="onTintColor" name="lightBlueAccent"/>
                                                         <color key="thumbTintColor" red="0.5974496695" green="0.58574032779999996" blue="0.93319660429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="toggleChanged:" destination="UZC-pV-RYG" eventType="valueChanged" id="RK8-7a-yHJ"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" name="intermediate"/>
@@ -280,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCh-nn-oI3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1862" y="694"/>
+            <point key="canvasLocation" x="-1836" y="617"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Kld-ZW-ZkA">
@@ -332,7 +335,7 @@
             <objects>
                 <viewController id="fll-kN-x6n" customClass="FeaturedReminderVC" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jyF-hC-2Xc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/23/20  1:30AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRp-Vt-SPl">

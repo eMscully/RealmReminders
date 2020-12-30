@@ -9,16 +9,16 @@ class NewReminderVC: UIViewController {
     @IBOutlet weak var isCompleteSwitch: UISwitch!
 
     let realm = try! Realm()
-    var newReminder =  Reminder()
-    var existingReminder = Reminder()
+    var reminder =  Reminder()
+    
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleTextField.text = existingReminder.title
-        datePicker.date = existingReminder.date
-        
+        titleTextField.text = reminder.title
+        datePicker.date = reminder.date
+        isCompleteSwitch.isOn = reminder.isComplete
         
     }
     
@@ -29,11 +29,11 @@ class NewReminderVC: UIViewController {
            
             try realm.write {
                 if let title = titleTextField.text {
-                    newReminder.title = title
-                    newReminder.date = datePicker.date
-                    newReminder.isComplete = isCompleteSwitch.isOn
+                    reminder.title = title
+                    reminder.date = datePicker.date
+                    reminder.isComplete = !isCompleteSwitch.isOn
                 }
-                    realm.add(newReminder)
+                    realm.add(reminder)
     
                 performSegue(withIdentifier: K.savedReminder, sender: self)
                 }
@@ -44,11 +44,30 @@ class NewReminderVC: UIViewController {
     }
             override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
               if let destinationVC = segue.destination as? ReminderListVC {
-                  destinationVC.reminderItem = newReminder
+                  destinationVC.reminderItem = reminder
                 }
             }
-        
-          }
+
+    @IBAction func toggleChanged(_ sender: UISwitch) {
+       
+        do {
+            try realm.write{
+                reminder.isComplete = sender.isOn
+                realm.add(reminder)
+            }
+        } catch {
+            print("did not save toggle state")
+        }
+    }
+    
+}
+    
+    
+    
+    
+    
+    
+                  
 
 
         

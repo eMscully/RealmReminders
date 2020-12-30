@@ -5,7 +5,7 @@ import RealmSwift
 class ReminderListVC: UIViewController {
     @IBOutlet var tableView: UITableView!
     
-     let realm = try! Realm()
+    let realm = try! Realm()
     var reminders : Results<Reminder>?
     var reminderItem: Reminder?
     
@@ -35,12 +35,7 @@ extension ReminderListVC: UITableViewDataSource, UITableViewDelegate {
             
             return cell
             }
-        
-        
-        
-        
-        
-        
+  
             return UITableViewCell()
         }
     
@@ -58,7 +53,7 @@ extension ReminderListVC: UITableViewDataSource, UITableViewDelegate {
         if let destinationVC = segue.destination as? NewReminderVC {
             if let indexPath = tableView.indexPathForSelectedRow {
             
-                destinationVC.existingReminder = reminders![indexPath.row]
+                destinationVC.reminder = reminders![indexPath.row]
             }
         }
     }

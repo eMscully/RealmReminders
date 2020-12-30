@@ -36,10 +36,12 @@ class ReminderCell: UITableViewCell {
         let formatter = DateFormatter()
         dateLabel.text = formatter.string(from: reminder.date)
         if reminder.isComplete {
-            print("complete")
+            
         } else {
-            print("not complete")
+            
         }
+        
+        
 //        if reminder.isComplete {
 //            print("the code definitely worked")
 //        isCompleteIcon.image?.withTintColor(UIColor.green)
