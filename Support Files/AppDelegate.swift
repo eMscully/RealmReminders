@@ -6,16 +6,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
         do {
             let realm = try Realm()
             let path = Realm.Configuration.defaultConfiguration.fileURL!
-            print(path)
+            print("Path to default realm is \(path)")
         }
         catch {
-           print("Error initializing new Realm")
+           print("Error initializing new Realm due to : \(error.localizedDescription)")
        }
        return true
    }
