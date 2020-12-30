@@ -342,14 +342,14 @@
                                 <rect key="frame" x="126" y="328" width="162" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="textColor" name="white"/>
+                                <color key="textColor" name="lightBlueAccent"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Learn iOS Development" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmz-wt-hv1">
                                 <rect key="frame" x="20" y="360" width="374" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                                <color key="textColor" name="lightBlueAccent"/>
+                                <color key="textColor" name="completed"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -357,6 +357,10 @@
                         <color key="backgroundColor" name="darkest"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="featured" id="LfE-bd-Oeh"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="kRp-Vt-SPl" id="zPL-Ph-IsD"/>
+                        <outlet property="titleLabel" destination="bmz-wt-hv1" id="1Ul-RD-2Ld"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PqX-1W-t5D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -370,6 +374,9 @@
     <resources>
         <image name="diamond" catalog="system" width="128" height="122"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="completed">
+            <color red="0.51834827660000005" green="0.85720252990000001" blue="0.64282065629999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="darkest">
             <color red="0.19607843137254902" green="0.21176470588235294" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
