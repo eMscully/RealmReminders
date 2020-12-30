@@ -10,12 +10,12 @@ class NewReminderVC: UIViewController {
 
     let realm = try! Realm()
     var reminder =  Reminder()
-    
+    var reminders : Results<Reminder>?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        reminders = realm.objects(Reminder.self)
         titleTextField.text = reminder.title
         datePicker.date = reminder.date
         isCompleteSwitch.isOn = reminder.isComplete
@@ -26,7 +26,6 @@ class NewReminderVC: UIViewController {
     @IBAction func saveBttnPressed(_ sender: UIButton) {
       
         do {
-           
             try realm.write {
                 if let title = titleTextField.text {
                     reminder.title = title
@@ -62,56 +61,6 @@ class NewReminderVC: UIViewController {
     
 }
     
-    
-    
-    
-    
-    
-                  
-
-
-        
-    
-
-
-//
-//        if let newReminder = newReminder {
-//
-//            newReminder.title = title ?? ""
-//            newReminder.date = datePicker.date
-//            newReminder.isComplete = isCompleteSwitch.isOn
-//            do {
-//            try realm.write{
-//                realm.add(newReminder)
-//
-//            }
-//            } catch {
-//
-//            }
-//        }
-//            performSegue(withIdentifier: K.savedReminder, sender: self)
-//        }
-   
-    
-
-   
-
-//        do {
-//            try realm.write {
-//                if let title = titleTextField.text {
-//                    newReminder.title = title
-//                    newReminder.date = datePicker.date
-//
-//                    newReminder.isComplete = !isCompleteSwitch.isOn
-//
-//                }
-//                realm.add(newReminder)
-//
-//                performSegue(withIdentifier: K.savedReminder, sender: self)
-//            }
-//        } catch {
-//            print("Error saving user input: \(error.localizedDescription)")
-//        }
 
 
 

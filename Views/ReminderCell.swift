@@ -7,15 +7,14 @@ class ReminderCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var isCompleteIcon: UIImageView!
     @IBOutlet var infoButton: UIButton!
-    // created ^ reference outlet just in case
-  
-    
 
- 
+  
+
     var reminder : Reminder?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         if let reminder = reminder  {
             titleLabel.text = reminder.title
         let formatter = DateFormatter()
@@ -41,25 +40,21 @@ class ReminderCell: UITableViewCell {
             
         }
         
-        
-//        if reminder.isComplete {
-//            print("the code definitely worked")
-//        isCompleteIcon.image?.withTintColor(UIColor.green)
-//        } else {
-//            print("failed to record completed status")
-//            isCompleteIcon.image?.withTintColor(UIColor(named: "white")!)
-//        }
+        if reminder.isComplete {
+            isCompleteIcon.image = UIImage(systemName: "diamond")?.withTintColor(UIColor(named: "completed")!, renderingMode: .alwaysOriginal)
+        } else {
+            isCompleteIcon.image = UIImage(systemName: "diamond")?.withTintColor(.white)
+        }
 
         
     }
-    
 
-    
         
         @IBAction func infoButtonPressed(_ sender: UIButton) {
         }
     }
     
 
-
-
+/*
+ 
+ */
