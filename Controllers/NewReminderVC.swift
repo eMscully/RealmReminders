@@ -10,11 +10,15 @@ class NewReminderVC: UIViewController {
 
     let realm = try! Realm()
     var newReminder =  Reminder()
-    
+    var existingReminder = Reminder()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleTextField.text = existingReminder.title
+        datePicker.date = existingReminder.date
+        
         
     }
     

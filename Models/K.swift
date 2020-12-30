@@ -6,6 +6,7 @@ struct K {
     static let createNewReminder = "createSegue"
     static let savedReminder = "saveSegue"
     static let cellButtonID = "infoButton"
+    static let infoPressed = "getInfoSegue"
     
     
 }

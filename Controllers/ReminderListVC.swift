@@ -30,26 +30,43 @@ extension ReminderListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell", for: indexPath) as! ReminderCell
-         
             if let reminderItem = reminders?[indexPath.row] {
                 cell.update(reminder: reminderItem)
             
             return cell
             }
         
+        
+        
+        
+        
+        
             return UITableViewCell()
+        }
+    
+    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+      //let selectedCell = reminders?[indexPath.row]
+        
+        performSegue(withIdentifier: K.infoPressed, sender: self)
+        
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? NewReminderVC {
+            if let indexPath = tableView.indexPathForSelectedRow {
+            
+                destinationVC.existingReminder = reminders![indexPath.row]
+            }
         }
     }
 
+}
 
 
-    
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-////        let selection = tableView.indexPath(for: (reminders?[indexPath.row])!)
-//    }
-//
-//
-//}
-//
-//}
+
+
+
+

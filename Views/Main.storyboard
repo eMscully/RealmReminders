@@ -72,6 +72,7 @@
                                                     <state key="normal" image="info.circle" catalog="system"/>
                                                     <connections>
                                                         <action selector="infoButton:forEvent:" destination="eOE-X7-YRF" eventType="touchUpInside" id="1bL-m8-NUs"/>
+                                                        <segue destination="UZC-pV-RYG" kind="show" identifier="getInfoSegue" id="LJc-H9-zMr"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -93,7 +94,7 @@
                                         <color key="tintColor" name="lightBlueAccent"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="7ID-DO-Pby" id="YGn-yE-dmO"/>
-                                            <outlet property="infoButton" destination="vEL-ZN-JSz" id="sFX-BF-CYf"/>
+                                            <outlet property="infoButton" destination="vEL-ZN-JSz" id="vNo-8q-wS2"/>
                                             <outlet property="isCompleteIcon" destination="l8M-Ud-L1K" id="vzN-B0-nqW"/>
                                             <outlet property="titleLabel" destination="7eG-qx-VOW" id="YP6-Pe-BJH"/>
                                         </connections>
@@ -138,7 +139,7 @@
             <objects>
                 <viewController id="UZC-pV-RYG" customClass="NewReminderVC" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cjD-zm-BIr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pwp-ht-5qc">
@@ -331,7 +332,7 @@
             <objects>
                 <viewController id="fll-kN-x6n" customClass="FeaturedReminderVC" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jyF-hC-2Xc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/23/20  1:30AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRp-Vt-SPl">
@@ -360,6 +361,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="LJc-H9-zMr"/>
         <segue reference="l9m-z7-VFg"/>
     </inferredMetricsTieBreakers>
     <resources>
